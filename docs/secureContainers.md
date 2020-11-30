@@ -17,7 +17,7 @@ Using the inside-out pattern, the container steps down from root to run as a non
 Overview of the bootstrap process:
 
 * Start as root
-* Immediately check if need to step down (PINGIDENTITY_RUN_PRIVILEGED=false)
+* Immediately check if need to step down (PING_CONTAINER_PRIVILEGED=false)
 * Create the group with provided group ID or 9999
 * Create the user with provided user ID or 9031
 * Strip ownership but for user:group
@@ -28,7 +28,7 @@ This pattern has the benefit of removing permissions from anything but the speci
 Use the following environment variables to set the user and group and prevent from running as root
 
 ```shell
-PINGIDENTITY_RUN_PRIVILEGED=false
+PING_CONTAINER_PRIVILEGED=false
 PING_CONTAINER_UID=<UID> (Default: 9031)
 PING_CONTAINER_GID=<GID> (Default: 9999)
 ```
@@ -57,3 +57,7 @@ Cons:
 
 * User does not have a home directory, some tools will or may have issues running properly or as expected
 * For this pattern to work, at build time, we need to leave permissions open to the world since the user does not exist in /etc/password and inodes cannot be tied to it at runtime
+
+## Ping Identity's Docker Image Hardening Guide
+
+View Ping Identity's [hardening guide](https://support.pingidentity.com/s/article/Docker-Image-Hardening-Deployment-Guide) which outlines best practices for securing your product Docker Image.

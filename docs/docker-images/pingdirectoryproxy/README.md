@@ -7,7 +7,7 @@ instances.
 
 ## Related Docker Images
 - pingidentity/pingbase - Parent Image
-	>**This image inherits, and can use, Environment Variables from [pingidentity/pingbase](https://pingidentity-devops.gitbook.io/devops/docker-images/pingbase)**
+	>**This image inherits, and can use, Environment Variables from [pingidentity/pingbase](https://pingidentity-devops.gitbook.io/devops/dockerimagesref/pingbase)**
 - pingidentity/pingdatacommon - Common PingData files (i.e. hook scripts)
 - pingidentity/pingdownloader - Used to download product bits
 
@@ -27,9 +27,7 @@ this image.
 | PD_DELEGATOR_PUBLIC_HOSTNAME  | localhost  | Public hostname of the DA app 
 | STARTUP_FOREGROUND_OPTS  | --nodetach  | Adding lockdown mode so non administrive connections be made until server has been started with replication enabled 
 | STARTUP_BACKGROUND_OPTS  |   | Adding lockdown mode so non administrive connections be made until server has been started with replication enabled 
-| ROOT_USER_PASSWORD_FILE  | ${SECRETS_DIR}/root-user-password  | 
-| ADMIN_USER_PASSWORD_FILE  | ${SECRETS_DIR}/admin-user-password  | 
-| ENCRYPTION_PASSWORD_FILE  | ${SECRETS_DIR}/encryption-password  | 
+| ROOT_USER_PASSWORD_FILE  |   | Location of file with the root user password (i.e. cn=directory manager). Defaults to the /SECRETS_DIR/root-user-password 
 | TAIL_LOG_FILES  | "${SERVER_ROOT_DIR}/logs/access \  | Files tailed once container has started 
 | PD_PROFILE  | ${STAGING_DIR}/pd.profile  | 
 ## Ports Exposed
@@ -115,4 +113,4 @@ Please go [here](https://github.com/pingidentity/pingidentity-devops-getting-sta
 ---
 This document auto-generated from _[pingdirectoryproxy/Dockerfile](https://github.com/pingidentity/pingidentity-docker-builds/blob/master/pingdirectoryproxy/Dockerfile)_
 
-Copyright (c)  2019 Ping Identity Corporation. All rights reserved.
+Copyright (c) 2020 Ping Identity Corporation. All rights reserved.

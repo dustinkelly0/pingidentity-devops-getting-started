@@ -10,6 +10,8 @@ spec:
     port: 80
   - name: https
     port: 443
+  - name: ldaps
+    port: 636
   selector:
     role: pingdatagovernance
 ---
@@ -38,11 +40,11 @@ spec:
             name: devops-secret
             optional: true
         image: pingidentity/pingdatagovernance:edge
-        imagePullPolicy: Always
         name: pingdatagovernance
         ports:
         - containerPort: 80
         - containerPort: 443
+        - containerPort: 636
         resources:
           limits:
             cpu: "1"

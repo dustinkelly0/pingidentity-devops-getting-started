@@ -12,7 +12,7 @@ this image.
 | ------------: | ----------- | ---------------------------------
 | IMAGE_VERSION  | ${IMAGE_VERSION}  | Image version, set by build process of the docker build 
 | IMAGE_GIT_REV  | ${IMAGE_GIT_REV}  | Image git revision, set by build process of the docker build 
-| ACCEPT_EULA  | NO  | Must be set to 'YES' for the container to start 
+| PING_IDENTITY_ACCEPT_EULA  | NO  | Must be set to 'YES' for the container to start 
 | BASE  | ${BASE:-/opt}  | Location of the top level directory where everything is located in image/container 
 | IN_DIR  | ${BASE}/in  | Location of a local server-profile volume 
 | OUT_DIR  | ${BASE}/out  | Path to the runtime volume 
@@ -21,7 +21,7 @@ this image.
 | LOGS_DIR  | ${BASE}/logs  | Path to a volume generically used for logging 
 | PING_IDENTITY_DEVOPS_FILE  | devops-secret  | File name for devops-creds passed as a Docker secret 
 | STAGING_DIR  | ${BASE}/staging  | Path to the staging area where the remote and local server profiles can be merged 
-| SECRETS_DIR  | ${STAGING_DIR}/.sec  | Default path to the secrets 
+| SECRETS_DIR  | /run/secrets  | Default path to the secrets 
 | TOPOLOGY_FILE  | ${STAGING_DIR}/topology.json  | Path to the topology file 
 | HOOKS_DIR  | ${STAGING_DIR}/hooks  | Path where all the hooks scripts are stored 
 | CONTAINER_ENV  | ${STAGING_DIR}/.env  | Environment Property file use to share variables between scripts in container 
@@ -34,12 +34,14 @@ this image.
 | SERVER_ROOT_DIR  | ${OUT_DIR}/instance  | Path from which the runtime executes 
 | SECURITY_CHECKS_STRICT  | false  | Requires strict checks on security 
 | SECURITY_CHECKS_FILENAME  | *.jwk *.pin  | Perform a check for filenames that may violate security (i.e. secret material) 
+| UNSAFE_CONTINUE_ON_ERROR  |   | If this is set to true, then the container will provide a hard warning and continue. 
 | LICENSE_DIR  | ${SERVER_ROOT_DIR}  | License directory and filename 
 | STARTUP_COMMAND  |   | The command that the entrypoint will execute in the foreground to instantiate the container 
 | STARTUP_FOREGROUND_OPTS  |   | The command-line options to provide to the the startup command when the container starts with the server in the foreground. This is the normal start flow for the container 
 | STARTUP_BACKGROUND_OPTS  |   | The command-line options to provide to the the startup command when the container starts with the server in the background. This is the debug start flow for the container 
 | PING_IDENTITY_DEVOPS_KEY_REDACT  | true  | 
-| TAIL_LOG_FILES  |   | A whitespace separated list of log files to tail to the container standard output 
+| TAIL_LOG_FILES  |   | A whitespace separated list of log files to tail to the container standard output - DO NOT USE WILDCARDS like /path/to/logs/*.log 
+| TAIL_LOG_PARALLEL  |   | Set to true to use parallel for the invocation of the tail utility 
 | COLORIZE_LOGS  | true  | If 'true', the output logs will be colorized with GREENs and REDs, otherwise, no colorization will be done.  This is good for tools that monitor logs and colorization gets in the way. 
 | LOCATION  | Docker  | Location default value 
 | LOCATION_VALIDATION  | true|Any string denoting a logical/physical location|Must be a string  | 
@@ -93,4 +95,4 @@ Please go [here](https://github.com/pingidentity/pingidentity-devops-getting-sta
 ---
 This document auto-generated from _[pingbase/Dockerfile](https://github.com/pingidentity/pingidentity-docker-builds/blob/master/pingbase/Dockerfile)_
 
-Copyright (c)  2019 Ping Identity Corporation. All rights reserved.
+Copyright (c) 2020 Ping Identity Corporation. All rights reserved.

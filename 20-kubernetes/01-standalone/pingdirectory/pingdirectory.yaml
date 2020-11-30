@@ -9,7 +9,7 @@ spec:
   ports:
   - name: ldaps
     port: 636
-  - name: ssl
+  - name: https
     port: 443
   - name: ldap
     port: 389
@@ -42,7 +42,6 @@ spec:
             name: devops-secret
             optional: true
         image: pingidentity/pingdirectory:edge
-        imagePullPolicy: Always
         lifecycle:
           preStop:
             exec:

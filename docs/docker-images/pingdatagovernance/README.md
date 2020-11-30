@@ -7,7 +7,7 @@ instances.
 
 ## Related Docker Images
 - pingidentity/pingbase - Parent Image
-	>**This image inherits, and can use, Environment Variables from [pingidentity/pingbase](https://pingidentity-devops.gitbook.io/devops/docker-images/pingbase)**
+	>**This image inherits, and can use, Environment Variables from [pingidentity/pingbase](https://pingidentity-devops.gitbook.io/devops/dockerimagesref/pingbase)**
 - pingidentity/pingdatacommon - Common PingData files (i.e. hook scripts)
 - pingidentity/pingdownloader - Used to download product bits
 
@@ -27,8 +27,8 @@ this image.
 | STARTUP_COMMAND  | ${SERVER_ROOT_DIR}/bin/start-server  | 
 | STARTUP_FOREGROUND_OPTS  | --nodetach  | Adding lockdown mode so non administrive connections be made until server has been started with replication enabled 
 | STARTUP_BACKGROUND_OPTS  |   | Adding lockdown mode so non administrive connections be made until server has been started with replication enabled 
-| ROOT_USER_PASSWORD_FILE  | ${SECRETS_DIR}/root-user-password  | 
-| ENCRYPTION_PASSWORD_FILE  | ${SECRETS_DIR}/encryption-password  | 
+| ROOT_USER_PASSWORD_FILE  |   | Location of file with the root user password (i.e. cn=directory manager). Defaults to the /SECRETS_DIR/root-user-password 
+| ENCRYPTION_PASSWORD_FILE  |   | Location of file with the passphrase for setting up encryption Defaults to the /SECRETS_DIR/encryption-password 
 | TAIL_LOG_FILES  | ${SERVER_ROOT_DIR}/logs/access  | Files tailed once container has started 
 | PD_PROFILE  | ${STAGING_DIR}/pd.profile  | 
 ## Ports Exposed
@@ -94,4 +94,4 @@ Please go [here](https://github.com/pingidentity/pingidentity-devops-getting-sta
 ---
 This document auto-generated from _[pingdatagovernance/Dockerfile](https://github.com/pingidentity/pingidentity-docker-builds/blob/master/pingdatagovernance/Dockerfile)_
 
-Copyright (c)  2019 Ping Identity Corporation. All rights reserved.
+Copyright (c) 2020 Ping Identity Corporation. All rights reserved.

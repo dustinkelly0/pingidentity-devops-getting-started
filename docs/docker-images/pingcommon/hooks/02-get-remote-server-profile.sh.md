@@ -5,7 +5,7 @@
  occur when running this hook.
  These bits will be placed into the STAGING_DIR location (defaults to
  ${BASE_DIR}/staging).
- Server Profiles may be layered to copy in profils from a parent/ancestor server
+ Server Profiles may be layered to copy in profiles from a parent/ancestor server
  profile.  An example might be a layer of profiles that look like:
  - Dev Environment Configs (DEV_CONFIG)
    - Dev Certificates (DEV_CERT)
@@ -22,6 +22,6 @@
  then this hook could be overridden by a different hook
 
 ---
-This document auto-generated from _[pingcommon/hooks/02-get-remote-server-profile.sh](https://github.com/pingidentity/pingidentity-docker-builds/blob/master/pingcommon/hooks/02-get-remote-server-profile.sh)_
+This document auto-generated from _[pingcommon/opt/staging/hooks/02-get-remote-server-profile.sh](https://github.com/pingidentity/pingidentity-docker-builds/blob/master/pingcommon/opt/staging/hooks/02-get-remote-server-profile.sh)_
 
-Copyright (c)  2019 Ping Identity Corporation. All rights reserved.
+Copyright (c) 2020 Ping Identity Corporation. All rights reserved.

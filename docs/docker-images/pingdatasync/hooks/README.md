@@ -1,32 +1,13 @@
 
 # Ping Identity DevOps `pingdatasync` Hooks
 List of available hooks:
-* [CONTRIBUTING.md](CONTRIBUTING.md.md)
-* [DISCLAIMER](DISCLAIMER.md)
-* [LICENSE.md](LICENSE.md.md)
-* [README.md](README.md.md)
-* [apache-jmeter](apache-jmeter.md)
-* [ci_scripts](ci_scripts.md)
-* [integration_tests](integration_tests.md)
-* [ldap-sdk-tools](ldap-sdk-tools.md)
-* [pingaccess](pingaccess.md)
-* [pingbase](pingbase.md)
-* [pingcentral](pingcentral.md)
-* [pingcommon](pingcommon.md)
-* [pingdatacommon](pingdatacommon.md)
-* [pingdataconsole](pingdataconsole.md)
-* [pingdatagovernance](pingdatagovernance.md)
-* [pingdatagovernancepap](pingdatagovernancepap.md)
-* [pingdatasync](pingdatasync.md)
-* [pingdelegator](pingdelegator.md)
-* [pingdirectory](pingdirectory.md)
-* [pingdirectoryproxy](pingdirectoryproxy.md)
-* [pingdownloader](pingdownloader.md)
-* [pingfederate](pingfederate.md)
-* [pingjvm](pingjvm.md)
-* [pingtoolkit](pingtoolkit.md)
+* [03-build-run-plan.sh](03-build-run-plan.sh.md)
+* [80-post-start.sh](80-post-start.sh.md)
+* [90-shutdown-sequence.sh](90-shutdown-sequence.sh.md)
+
+These hooks will replace hooks defined by parent images (i.e. pingcommon/pingdatacommon)
 
 ---
-This document auto-generated from _[pingdatasync/hooks](https://github.com/pingidentity/pingidentity-docker-builds/blob/master/pingdatasync/hooks)_
+This document auto-generated from _[pingdatasync/opt/staging/hooks](https://github.com/pingidentity/pingidentity-docker-builds/blob/master/pingdatasync/opt/staging/hooks)_
 
-Copyright (c)  2019 Ping Identity Corporation. All rights reserved.
+Copyright (c) 2020 Ping Identity Corporation. All rights reserved.
